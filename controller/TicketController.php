@@ -22,8 +22,8 @@
                 $arrData = array();
                 $arrData[] = $data["IdTicket"];
                 $arrData[] = $data["Categoria"];
-                $arrData[] = $data["Descripcion"];
-                $arrData[] = '<button type="button" onClick ="ver('.$data["IdTicket"].')" id="'.$data["IdTicket"].'"class="btn btn-inline btn-sm btn-primary ladda-button"><i class="fa fa-eye"></i></button>';
+                $arrData[] = $data["Titulo"];
+                $arrData[] = '<button type="button" onClick ="ver('.$data["IdTicket"].')" id="'.$data["IdTicket"].'"class="btn btn-inline btn-sm btn-primary text-center ladda-button mx-3"><i class="fa fa-eye"></i></button>';
                 
                 $x[] = $arrData;
                 

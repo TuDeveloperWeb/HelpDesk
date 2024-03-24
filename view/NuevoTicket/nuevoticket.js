@@ -9,22 +9,23 @@ function init() {
 
 $(document).ready(function() {
 
-  var texto =$('#cat-sumernote').val();
- console.log("El texto es :"); 
-console.log(texto);
-
     $('#cat-sumernote').summernote({
         height : 150 
     });
 
 
-    $.post("../../controller/CategoriaController.php?op=combo", function (data,status) {
-           $('#opCategoria').html(data);
-        },
-        
-    );
+    $.ajax({
+        type: "POST",
+        url: "../../controller/CategoriaController.php",
+        data: {op:"combo"},
+        success: function (response) {
+            $('#opCategoria').html(response);
+        }
+    });
 
 
+
+    
 
 });
 
@@ -45,12 +46,12 @@ function GuardarTicket() {
                 confirmButtonText: "Acpetar"
                 
             });
-
+            // $('#cat-sumernote').reset();
+        },
+        complete: function () {
             $('#txtTitulo').val('');
             $('#txtUsuario').val('');
             $('#cat-sumernote').summernote('reset');
-            // $('#cat-sumernote').reset();
-            
         }
     });
 

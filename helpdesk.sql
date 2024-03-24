@@ -62,16 +62,7 @@ CREATE TABLE `ticket` (
 -- Volcado de datos para la tabla `ticket`
 --
 
-INSERT INTO `ticket` (`IdTicket`, `IdUsuario`, `IdCategoria`, `Titulo`, `Descripcion`, `Estado`) VALUES
-(3, 1, 1, 'prueba 3', 'asss', 1),
-(4, 1, 1, 'aaaa', '<p>asasasaa</p>', 1),
-(5, 1, 1, 'aaaaqqq', '<p>asdasdasda</p>', 1),
-(6, 1, 1, 'aaaaqqq', '<p>asdasdasda</p>', 1),
-(7, 1, 1, 'asdasdad', '<p>qqqqq</p>', 1),
-(9, 1, 1, 'Problema con la laptop', '<p>No prende</p>', 1),
-(10, 1, 1, 'aaaa', '<p>sdsdsd</p>', 1),
-(11, 1, 1, 'asasas', '<p>dfdfd</p>', 1),
-(12, 1, 1, 'Problema con la PC', '<p>Falta de memoria RAM</p>', 1);
+
 
 -- --------------------------------------------------------
 

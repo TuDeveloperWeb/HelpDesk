@@ -43,7 +43,6 @@ if (isset($_SESSION["Nombre"])) {
 
                 <div class="box-typical box-typical-padding">
                     <p>Desde esta ventana podra generar nuevos tickets de HelpDesk</p>
-
                     <h5 class="m-t-lg with-border">Ingresar Informacion</h5>
 
                     <div class="row">
@@ -54,7 +53,7 @@ if (isset($_SESSION["Nombre"])) {
                                     <input type="hidden" name="idUsuario" id="txtUsuario" value="<?php echo $_SESSION["IdUsuario"] ?>">
                                     <div class="">
                                         <select id="opCategoria" name="idCategoria" class="form-control">
-
+                                            
                                         </select>
                                     </div>
                                 </fieldset>

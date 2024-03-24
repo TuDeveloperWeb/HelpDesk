@@ -1,0 +1,11 @@
+.td-centrado{
+    text-align: center !important;
+}
+
+.th-center{
+    text-align: center;
+}
+
+.tblTicket tr td:nth-child(2) {
+    text-align: center;
+}

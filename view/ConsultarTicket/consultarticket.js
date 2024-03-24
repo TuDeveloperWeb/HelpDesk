@@ -7,7 +7,7 @@ function init(){
 
 $(document).ready(function () {
 
-    tabla = $('#tbl-ticket').dataTable({
+    let tabla = $('#tbl-ticket').dataTable({
         
         "paging": true,
         "lengthChange": true,
@@ -67,7 +67,8 @@ $(document).ready(function () {
                 }
             }).DataTable();
 
-        tabla.columns(2).cells().addClass('centrado');
+
+    
 
     // tabla = $('#tbl-ticket').dataTable({
     //     "aProcessing" :true,

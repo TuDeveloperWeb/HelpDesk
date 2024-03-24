@@ -1,12 +1,9 @@
 <?php
 
-require_once("config/conexion.php");
 if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
     require_once("model/Usuario.php");
     $usuario = new Usuario();
     $usuario->login();
-    // $usuario->mostrar();
-    // echo "<h1>Maria te ama y te espera</h1>";
 }
 
 
@@ -42,6 +39,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
+                <!-- No hay action por lo tanto redirige al mismo archivo -->
                 <form class="sign-box" method="POST" >
                     <div class="sign-avatar">
                         <img src="public/img/avatar-sign.png" alt="">

@@ -1,6 +1,5 @@
 <?php 
 
-echo "<h1>MARIA TE AMA</h1>";
 require_once("../../config/conexion.php");
 session_destroy();
 
