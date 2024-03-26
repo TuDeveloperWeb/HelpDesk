@@ -33,24 +33,36 @@ function GuardarTicket() {
     var formData = new FormData($('#ticket-form')[0]);
     $.ajax({
         type: "POST",
-        url: "../../controller/TicketController.php?action=store",
+        url: "../../routes/api.php?action=store",
         data: formData,
         contentType:false,
         processData: false,
         success: function (response) {
+            const  {success,message} = JSON.parse(response);
+            if (success) {
+                swal({
+                    title: "Correcto!",
+                    text: message,
+                    type: "success",
+                    confirmButtonClass: "btn-success",
+                    confirmButtonText: "Acpetar"
+                });
+
+            }
+            
+        },
+        error: function (xhr, status, error) {
+            var errorMessage = JSON.parse(xhr.responseText).message;
             swal({
-                title: "Correcto!",
-                text: "Registrado Correctamente",
-                type: "success",
-                confirmButtonClass: "btn-success",
-                confirmButtonText: "Acpetar"
-                
+                title: "Error",
+                text: errorMessage,
+                type: "error",
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Aceptar"
             });
-            // $('#cat-sumernote').reset();
         },
         complete: function () {
             $('#txtTitulo').val('');
-            $('#txtUsuario').val('');
             $('#cat-sumernote').summernote('reset');
         }
     });

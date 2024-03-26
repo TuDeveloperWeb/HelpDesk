@@ -1,13 +1,17 @@
-var tabla;
+let tabla;
 
 function init(){
 
 }
 
+const showTicket = (id) => {
+    console.log(id);
+}
+
 
 $(document).ready(function () {
 
-    let tabla = $('#tbl-ticket').dataTable({
+    tabla = $('#tbl-ticket').dataTable({
         
         "paging": true,
         "lengthChange": true,
