@@ -6,6 +6,9 @@
     text-align: center;
 }
 
-.tblTicket tr td:nth-child(2) {
+.tblTicket tr td:nth-child(1),
+.tblTicket tr td:nth-child(2),
+.tblTicket tr td:nth-child(4),
+.tblTicket tr td:nth-child(5) {
     text-align: center;
 }

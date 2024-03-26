@@ -46,10 +46,11 @@ if (isset($_SESSION["Nombre"])) {
                         <table id="tbl-ticket" class="display table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th style="width:10%">Nro Ticket</th>
-                                    <th style="width:15%" class="th-center">Categoria</th>
-                                    <th class="d-none d-sm-table-cell " style="width:20%">Titulo</th>
-                                    <th class="text-center"  style="width:15%"></th>
+                                    <th style="width:12%" class="th-center">Nro Ticket</th>
+                                    <th style="width:20%" class="th-center">Categoria</th>
+                                    <th class="d-none d-sm-table-cell " style="width:33%">Titulo</th>
+                                    <th class="d-none d-sm-table-cell th-center" style="width:20%">Fecha</th>
+                                    <th class="text-center th-center"  style="width:15%"></th>
                                 </tr>
                             </thead>
                             <tbody class="tblTicket">

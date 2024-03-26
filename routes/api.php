@@ -8,7 +8,6 @@
 
     switch ($action) {
         case 'store':
-            
             $idUsuario = $_POST["idUsuario"];
             $idCategoria = $_POST["idCategoria"];
             $titulo = $_POST["txtTitulo"];
@@ -21,8 +20,11 @@
                 'descripcion' => $descripcion
             ];
             
-         $ticketContoller->store($request);
-
+            $ticketContoller->store($request);
+            break;
+        case 'show':
+            $idUsuario = $_POST['idUsuario'];
+            $ticketContoller->show($idUsuario);
             break;
         
         default:

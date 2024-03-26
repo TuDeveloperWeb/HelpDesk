@@ -12,7 +12,6 @@ const showTicket = (id) => {
 $(document).ready(function () {
 
     tabla = $('#tbl-ticket').dataTable({
-        
         "paging": true,
         "lengthChange": true,
         "searching": true,
@@ -46,7 +45,7 @@ $(document).ready(function () {
 		        ],
 		"ajax":
 				{
-                    url : '../../controller/TicketController.php?action=show',
+                    url : '../../routes/api.php?action=show',
 					type : "post",
 					dataType : "json",
                     data : {idUsuario:1},
