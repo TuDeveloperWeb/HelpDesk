@@ -35,7 +35,7 @@
                     $arrData[] = $data["IdTicket"];
                     $arrData[] = $data["Categoria"];
                     $arrData[] = $data["Titulo"];
-                    $arrData[] = $data["created_at"];
+                    $arrData[] = date('d/m/Y',strtotime($data["created_at"])).'<br>'.date('H:i:s',strtotime($data["created_at"])) ;
                     $arrData[] = '<button type="button" onClick ="showTicket('.$data["IdTicket"].')" id="'.$data["IdTicket"].'"class="btn btn-inline btn-sm btn-primary text-center ladda-button mx-3"><i class="fa fa-eye"></i></button>';
                     $x[] = $arrData;  
                 }

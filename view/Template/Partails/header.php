@@ -21,7 +21,10 @@
             <div class="site-header-content-in">
                 <div class="site-header-shown">
                     <div class="dropdown user-menu">
-
+                        <?php
+                            print_r( $_SESSION['roles'])
+                        ?>
+                        
                         <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="../../public/img/user1.jpg" alt="">
                             <span class="d-none d-lg-inline-flex text-dark"><?php echo $user ?></span>
