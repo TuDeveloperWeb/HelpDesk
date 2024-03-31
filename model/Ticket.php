@@ -3,24 +3,30 @@ require_once(__DIR__ . "/../config/conexion.php");
 class Ticket extends Conectar
 {
 
-    public function show($idUsuario)
+    public function show(int $user_id, string $rol_id)
     {
         try {
             $conectar = parent::conexion();
             parent::set_names();
             $stament = $conectar->prepare("SELECT 
-                tck.IdTicket,
-                tck.IdUsuario,
-                tck.IdCategoria,
-                tck.Titulo,
-                tck.Descripcion,
-                tck.created_at,
-                us.Nombre, 
-                us.Apellido,RTRIM(cat.Descripcion) as Categoria 
-                FROM ticket tck INNER JOIN categoria cat ON tck.IdCategoria = cat.IdCategoria
-                INNER JOIN usuario us on tck.IdUsuario = us.IdUsuario
-                WHERE tck.Estado = 1 and us.IdUsuario = :idUsuario");
-            $stament->bindParam(":idUsuario", $idUsuario);
+            tck.IdTicket,
+            tck.IdUsuario,
+            tck.IdCategoria,
+            tck.Titulo,
+            tck.Descripcion,
+            tck.created_at,
+            us.Nombre, 
+            us.Apellido,
+            RTRIM(cat.Descripcion) as Categoria,
+            s.name  as status
+            FROM ticket tck INNER JOIN categoria cat ON tck.IdCategoria = cat.IdCategoria
+            INNER JOIN usuario us on tck.IdUsuario = us.IdUsuario
+            inner join status s  on tck.Estado = s.id
+            where true and 
+             if ((:rolId = 'NULL' ),true , tck.IdUsuario  = :user_id)
+            ");
+            $stament->bindParam(":user_id", $user_id);
+            $stament->bindParam(":rolId", $rol_id);
             $stament->execute();
             return $stament->fetchAll();
         } catch (PDOException $e) {
@@ -50,4 +56,5 @@ class Ticket extends Conectar
             throw $e;
         }
     }
-}
+};
+

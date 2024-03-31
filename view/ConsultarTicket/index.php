@@ -10,6 +10,7 @@ if (isset($_SESSION["Nombre"])) {
     <!--CSS  -->
     <?php require_once("../Template/head.php") ?>
     <title>ConsultarTicket</title>
+    <link rel="stylesheet" href="./css/style.css">
     </head>
 
     <body class="with-side-menu">
@@ -25,44 +26,16 @@ if (isset($_SESSION["Nombre"])) {
 
         <!-- Contenido -->
         <div class="page-content">
-            <div class="container-fluid">
-                <header class="section-header">
-                    <div class="tbl">
-                        <div class="tbl-row">
-                            <div class="tbl-cell">
-                                <h3>Consultar Ticket</h3>
-                                <ol class="breadcrumb breadcrumb-simple">
-                                    <li><a href="#">Inicio</a></li>
-                                    <li class="active">Consultar Ticket</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-
-                
-                <section class="box-typical box-typical-padding">
-                    <div class="table-responsive">
-                        <table id="tbl-ticket" class="display table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th style="width:12%" class="th-center">Nro Ticket</th>
-                                    <th style="width:20%" class="th-center">Categoria</th>
-                                    <th class="d-none d-sm-table-cell " style="width:33%">Titulo</th>
-                                    <th class="d-none d-sm-table-cell th-center" style="width:20%">Fecha</th>
-                                    <th class="text-center th-center"  style="width:15%"></th>
-                                </tr>
-                            </thead>
-                            <tbody class="tblTicket">
-                               
-                            </tbody>
-                        
-                        </table>
-                    </div>
-                </section>
-
-
-            </div><!--.container-fluid-->
+            <div id="content-primary" class="show">
+                <?php
+                    require_once(__DIR__."/components/TableTicket.php");
+                ?>
+            </div>
+            <div id="content-secondary" class="hide">
+                <?php
+                    require_once(__DIR__."/components/DetailTicket.php")
+                ?>
+            </div>
         </div><!--.page-content-->
 
 

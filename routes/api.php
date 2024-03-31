@@ -23,8 +23,9 @@
             $ticketContoller->store($request);
             break;
         case 'show':
-            $idUsuario = $_POST['idUsuario'];
-            $ticketContoller->show($idUsuario);
+            $user_id = $_POST['user_id'];
+            $rol_id = $_POST['rol_id'];
+            $ticketContoller->show($user_id, $rol_id);
             break;
         
         default:

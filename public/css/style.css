@@ -9,6 +9,21 @@
 .tblTicket tr td:nth-child(1),
 .tblTicket tr td:nth-child(2),
 .tblTicket tr td:nth-child(4),
-.tblTicket tr td:nth-child(5) {
+.tblTicket tr td:nth-child(5),
+.tblTicket tr td:nth-child(6) {
     text-align: center;
 }
+
+.bg-side{
+    background-color: #282C38;
+}
+
+.bg-logo{
+    background-color: red;
+    width: 120px;
+    height: 80px;
+}
+
+/* .side-menu{
+    background-color: rebeccapurple;
+} */

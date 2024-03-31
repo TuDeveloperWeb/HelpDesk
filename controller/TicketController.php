@@ -25,16 +25,16 @@
             }
 
         }
-        public function show(int $id){
-
+        public function show(int $user_id, string $rol_id){
             try {
-                $datos =  $this->model->show($id);
+                $datos =  $this->model->show($user_id,$rol_id);
                 $x = array();
                 foreach ($datos as $data) {
                     $arrData = array();
                     $arrData[] = $data["IdTicket"];
                     $arrData[] = $data["Categoria"];
                     $arrData[] = $data["Titulo"];
+                    $arrData[] = $this->getStatus($data['status']);            
                     $arrData[] = date('d/m/Y',strtotime($data["created_at"])).'<br>'.date('H:i:s',strtotime($data["created_at"])) ;
                     $arrData[] = '<button type="button" onClick ="showTicket('.$data["IdTicket"].')" id="'.$data["IdTicket"].'"class="btn btn-inline btn-sm btn-primary text-center ladda-button mx-3"><i class="fa fa-eye"></i></button>';
                     $x[] = $arrData;  
@@ -54,6 +54,25 @@
                 // Manejar otras excepciones generales
                 echo json_encode(["success" => false, "message" => "Error general: " . $e->getMessage()]);
             }     
+        }
+
+
+        public function getStatus(string $status){
+            
+            switch ($status) {
+                case 'Pending':
+                    return '<span class="label label-warning">'.$status.'</span>';
+                case 'Progress':
+                    return '<span class="label label-primary">'.$status.'</span>' ;
+                case 'Finish':
+                    return '<span class="label label-success">'.$status.'</span>' ;
+                case 'Cancel':
+                    return '<span class="label label-danger">'.$status.'</span>' ;    
+                default:
+                    return '<span class="label label-warning">undefined </span>' ;
+            }
+
+
         }
 
     }

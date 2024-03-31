@@ -27,3 +27,4 @@
 
 
   <link rel="stylesheet" href="../../public/css/style.css">
+  <link rel="stylesheet" href="../../public/css/separate/pages/activity.min.css">

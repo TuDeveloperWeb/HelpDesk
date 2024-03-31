@@ -1,27 +1,18 @@
-<nav class="side-menu">
-        <ul class="side-menu-list">
-            <li class="blue-dirty">
-                <a href="../Home/">
-                    <span class="glyphicon glyphicon-th"></span>
-                    <span class="lbl">Inicio</span>
-                </a>
-            </li>
+<?php
+  require_once(__DIR__."/../../components/navigation.php");
+?>
 
-            <li class="blue-dirty">
-                <a href="../NuevoTicket/">
-                    <span class="glyphicon glyphicon-th"></span>
-                    <span class="lbl">Nuevo Ticket</span>
-                </a>
-            </li>
-
-            <li class="blue-dirty">
-                <a href="../ConsultarTicket/">
-                    <span class="glyphicon glyphicon-th"></span>
-                    <span class="lbl">Consultar Ticket</span>
-                </a>
-            </li>
-        </ul>
-
-
-
-    </nav><!--.side-menu-->
+<nav class="side-menu bg-side">
+    <ul class="side-menu-list">
+        <?php foreach ($navigation as $item): ?>
+            <?php if (in_array($item['requiredRole'], $arrRoles)): ?>
+                <li class="grey with-sub">
+                    <a href="<?= $item['url'] ?>">
+                        <span class="<?= $item['icon'] ?>"></span>
+                        <span class="lbl"><?= $item['label'] ?></span>
+                    </a>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</nav><!--.side-menu-->

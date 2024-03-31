@@ -5,11 +5,23 @@ function init(){
 }
 
 const showTicket = (id) => {
+    
     console.log(id);
+
+    $("#content-primary, #content-secondary").toggleClass("show hide");
+
+
 }
 
 
 $(document).ready(function () {
+    
+    const user_id = $('#user_id').val();
+    const rol_id = $('#rol_id').val();
+ 
+
+
+
 
     tabla = $('#tbl-ticket').dataTable({
         "paging": true,
@@ -48,7 +60,10 @@ $(document).ready(function () {
                     url : '../../routes/api.php?action=show',
 					type : "post",
 					dataType : "json",
-                    data : {idUsuario:1},
+                    data : {
+                        user_id :user_id,
+                        rol_id : rol_id
+                    },
 					error: function(e){
 						console.log(e.responseText);
 					}
@@ -351,9 +366,6 @@ $(document).ready(function () {
 
 });
 
-function ver(IdTicket) { 
 
-    console.log(IdTicket);
- }
 
 init();
